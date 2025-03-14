@@ -24,9 +24,7 @@ st.dataframe(df_display, use_container_width=True)
 st.caption("This data was compiled by FiveThirtyEight for a 2019 article and "
         "includes 65 schools.")
 st.markdown("---")
-
 st.header("Key Variables")
-
 st.markdown(
     "* `year` : when the song was written (some are `unknown`)  "
     "\n* `student_writer` : whether the writer was a student (some are `unknown`) "
@@ -134,7 +132,6 @@ if variable in ['year', 'sec_duration', 'trope_count']:
     value = st.select_slider(f"Filter songs by {variable}", sorted_df[variable].unique())
 else :
     value = st.selectbox(f"Filter songs by {variable} value", sorted_df[variable].unique())
-
 # Filter for the conditions given by the selectbox/ slider
 filtered_df = sorted_df[sorted_df[variable] == value]
 df_display2 = filtered_df.filter(['school', 'conference', 'song_name', variable], 
@@ -154,7 +151,7 @@ mod_df2 = df.filter(['school', 'conference', 'song_name','year',
 # Sort values in selectbox alphabetically to allow for easier navigation
 sorted_df2 = mod_df2.sort_values(by=['school'], ascending=True)
 # User-selected school
-school = st.selectbox("Choose a school!", sorted_df2['school'].unique())
+school = st.selectbox("Choose a school!", sorted_df2['school'].unique(), index = 36)
 # Display all variables of selected school
 df_display3 = sorted_df2[sorted_df2['school'] == school]
 st.dataframe(df_display3, use_container_width=True)
@@ -170,11 +167,12 @@ filtered_conferences = [conf for conf in filtered_conferences if conf != "Indepe
 # User-selected conference
 selected_conference = st.selectbox("Choose a conference!", filtered_conferences)
 filtered_conference_df = df[df["conference"] == selected_conference]
+st.caption("*Note: Notre Dame is not included in this section because its "
+"football program is independent from any conference.*")
 
 # =================================
 # Conference Statistics: Pie Charts
 # =================================
-
 # Student writers
 # Get counts for each category (yes/no/unknown)
 student_writer_counts = filtered_conference_df['student_writer'].value_counts().reset_index()
