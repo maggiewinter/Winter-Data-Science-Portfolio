@@ -1,6 +1,8 @@
 streamlit
-pandas
 numpy
-matplotlib
-scikit-learn
-atlair
+pandas
+sklearn.model_selection
+sklearn.neighbors
+sklearn.metrics
+sklearn.preprocessing
+altair
