@@ -4,4 +4,4 @@ This app builds on the previous [K-Nearest Neighbors Machine Learning App](https
 
 *To run the app, enter `streamlit run Winter-Data-Science-Portfolio/MLUnsupervisedApp/main.py`* 
 
-OR *view it on Streamlit Community Cloud at [this link]([https://knnmachinelearningapp.streamlit.app](https://winter-data-science-portfolio-unsupervised-kmeans.streamlit.app))*
+OR *view it on Streamlit Community Cloud at [this link](https://winter-data-science-portfolio-unsupervised-kmeans.streamlit.app).*
