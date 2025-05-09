@@ -36,7 +36,7 @@ if uploaded_data is not None:
     # User-selected label/ target variable
 # Sample dataset    
 else:
-    data = pd.read_csv("data/winequality-red.csv", delimiter=';')
+    data = pd.read_csv("MLUnsupervisedApp/data/winequality-red.csv", delimiter=';')
 
 st.markdown("If you do not upload a file, the dataset `winequality-red` will be used.")
 
